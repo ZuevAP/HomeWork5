@@ -1,68 +1,141 @@
 package ru.netology
 val posts:MutableList<Post> = mutableListOf()
 
-object WallService {
 
-    fun add(post: Post): Post {
-
-        post.Id = if (posts.isEmpty()) 1 else posts.last().Id + 1
-
-        posts += post
-
-        return posts.last()
-    }
-
-    fun print(post: Post) {
-
-        println(posts.last().toString())
-
-    }
-
-    fun update(post: Post): Boolean {
-        for ((index, item) in posts.withIndex()) {
-            if (item.Id == post.Id) {
-                posts[index] = post.copy(Id = item.Id, date = item.date)
-                return true
-            }
-        }
-        return false
-    }
-
-}
 
 fun main () {
 
 
-    val service = WallService
+    val service = WallService()
 
     val myPost = Post(
         0,
-        0,
-        "Текст поста 1"
+        1,
+        null,
+        null,
+        null,
+        "Текст поста 1",
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
     )
 
     val myPost2 = Post(
         0,
-        0,
-        "Текст поста 2"
+        2,
+        null,
+        null,
+        null,
+        "Текст поста 2",
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
     )
 
     val myPost3 = Post(
         0,
-        0,
-        "Текст поста 3"
+        3,
+        null,
+        null,
+        null,
+        "Текст поста 3",
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
 
     )
     val myPost4 = Post(
         0,
-        0,
-        "Текст поста 4"
+        4,
+        null,
+        null,
+        null,
+        "Текст поста 4",
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
     )
 
     val myPost5 = Post(
         0,
-        0,
-        "Текст поста 5"
+        5,
+        null,
+        null,
+        null,
+        "Текст поста 5",
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
 
     )
 
@@ -73,7 +146,6 @@ fun main () {
     service.add(myPost4)
     service.add(myPost5)
     service.update(myPost4)
-    service.print(myPost5)
 
 
 

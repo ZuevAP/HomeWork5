@@ -8,34 +8,142 @@ class WallServiceTest{
 
 @Test
 fun addFunction() {
-    val service = WallService
-    val post = Post(0,
+    val service = WallService()
+    val post = Post(
         0,
-        "Текст поста 1")
+        1,
+        null,
+        null,
+        null,
+        "Текст поста 1",
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null)
 
     service.add(post)
 
-    var result: Boolean = posts.last().Id > 0
+    var result: Boolean = posts.last().id > 0
 
-    assertEquals( true, result)
+    assertTrue(result)
 }
 
 @Test
 fun updateExisting_True() {
-    val service = WallService
-    service.add(Post(0,
-        0,
-        "Текст поста 1"))
-    service.add(Post(0,
-        0,
-        "Текст поста 1"))
-    service.add(Post(0,
-        0,
-        "Текст поста 1"))
+    val service = WallService()
 
-    val update = Post(0,
+    service.add(Post(
         0,
-        "Текст поста 1")
+        1,
+        null,
+        null,
+        null,
+        "Текст поста 1",
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null))
+
+    service.add(Post(
+        0,
+        1,
+        null,
+        null,
+        null,
+        "Текст поста 1",
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null))
+
+    service.add(Post(
+        0,
+        1,
+        null,
+        null,
+        null,
+        "Текст поста 1",
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null))
+
+    val update = Post(
+        0,
+        1,
+        null,
+        null,
+        null,
+        "Текст поста 1",
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null)
 
     val result = service.update(update)
 
@@ -44,23 +152,85 @@ fun updateExisting_True() {
 
 @Test
 fun updateExisting_False() {
-    val service = WallService
-    service.add(Post(0,
+    val service = WallService()
+    service.add(Post(
         0,
-        "Текст поста 1"))
-    service.add(Post(0,
-        0,
-        "Текст поста 1"))
-    service.add(Post(0,
-        0,
-        "Текст поста 1"))
+        1,
+        null,
+        null,
+        null,
+        "Текст поста 1",
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null))
 
-    val update = Post(0,
+    service.add(Post(
         0,
-        "Текст поста 1")
+        1,
+        null,
+        null,
+        null,
+        "Текст поста 1",
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null))
+
+        val update = Post(
+            2,
+            1,
+            null,
+            null,
+            null,
+            "Текст поста 1",
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null)
 
     val result = service.update(update)
 
     assertFalse(result)
+
 }
 }
